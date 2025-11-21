@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 export default function useLocalStorage(key, defaultValue) {
   const [value, setValue] = useState(() => {
     try {
+      
       const raw = window.localStorage.getItem(key);
       return raw != null ? JSON.parse(raw) : defaultValue;
     } catch {
